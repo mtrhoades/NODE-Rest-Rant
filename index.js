@@ -1,9 +1,22 @@
+// require .env file with config method:
+require('dotenv').config();
+
+// require express:
 const express = require('express');
+
+// create app variable:
 const app = express();
 
+// initialize the app variable with .get:
 app.get('/', (req, res) => {
     res.send('Helllllooo Therrrrrre!')
 });
 
-app.listen(3000)
+// make another route for 404 alert:
+app.get('*', (req, res) => {
+    res.status(404).send(`<h1>404 Page</h1>`)
+});
+
+// runs the server on specific port, set with .env:
+app.listen(process.env.PORT)
 console.log('I am wiiiiide awake!')
