@@ -3,7 +3,7 @@ const router = require('express').Router()
 
 // make first route for places:
 router.get('/', (req, res) => {
-    res.send('Get/places')
+    res.send('Get your places here!')
 });
 
 // export router:

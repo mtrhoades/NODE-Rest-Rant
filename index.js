@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 // make another route for 404 alert:
 app.get('*', (req, res) => {
-    res.status(404).send(`<h1>404 Page</h1>`)
+    res.status(404).send(`<h1>404 Page, Not Found!</h1>`)
 });
 
 // runs the server on specific port, set with .env:
