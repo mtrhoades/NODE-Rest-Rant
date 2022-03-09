@@ -7,6 +7,9 @@ const express = require('express');
 // create app variable:
 const app = express();
 
+// import router from places.js:
+app.use('/places', require('./controllers/places'));
+
 // initialize the app variable with .get:
 app.get('/', (req, res) => {
     res.send('Helllllooo Therrrrrre!')
