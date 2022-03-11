@@ -1,10 +1,12 @@
-// make .router for requiring express:
+// Selectors:
 const router = require('express').Router()
 
-// make first route for places:
+// Index:
 router.get('/', (req, res) => {
     res.send('Get your places here!')
 });
+
+// Show:
 
 // export router:
 module.exports = router
