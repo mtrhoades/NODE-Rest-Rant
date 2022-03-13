@@ -22,7 +22,8 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  res.send("Create new place");
+    console.log(req.body);
+    res.send("Create new place");
 });
 
 router.get('/new', (req, res) => {
