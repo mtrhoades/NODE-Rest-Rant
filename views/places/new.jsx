@@ -1,7 +1,10 @@
-// Require statements:
+// RENDERS A NEW PLACE INPUT PAGE:
+
+//IMPORTS
 const React = require('react');
 const Def = require('../default');
 
+// STUB FUNCTION
 function new_form () {
     return (
         <Def>
@@ -35,4 +38,6 @@ function new_form () {
     )
 }
 
+
+// EXPORTS
 module.exports = new_form

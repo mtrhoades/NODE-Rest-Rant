@@ -1,6 +1,10 @@
+// RENDERS ERROR 404 PAGE IN HTML FOR ANYTHING ELSE TYPED IN ADDRESS BAR OTHER THAN THE PAGES WE HAVE TO VIEW.
+
+// IMPORTS
 const React = require('react')
 const Def = require('./default')
 
+// STUB FUNCTION
 function error404 () {
     return (
       <Def>
@@ -15,4 +19,6 @@ function error404 () {
     )
   }
 
+
+// EXPORTS
 module.exports = error404

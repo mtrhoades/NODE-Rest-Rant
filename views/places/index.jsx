@@ -1,6 +1,10 @@
-const React = require('react')
-const Def = require('../default')
+// RENDERS AN INDEX HTML PAGE FOR LISTING THE DATA:
 
+// IMPORTS
+const React = require('react')
+const Def = require('../default') // require default.jsx page to use as a default html set-up & setting it to a variable to use below.
+
+// STUB FUNCTION
 function index (data) {
     let placesFormatted = data.places.map((place, index) => {
       return (
@@ -35,4 +39,6 @@ function index (data) {
     )
   }
 
+
+  // EXPORTS
   module.exports = index

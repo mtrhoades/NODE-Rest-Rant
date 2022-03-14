@@ -1,8 +1,10 @@
-// import react and def function created in default.jsx
+// RENDERS HOME PAGE IN HTML:
+
+// IMPORTS
 const React = require('react')
 const Def = require('./default')
 
-// create stub function
+// STUB FUNCTION
 function home () {
     return (
       <Def>
@@ -22,5 +24,6 @@ function home () {
     )
   }
 
-// export stub function
+
+// EXPORTS
 module.exports = home

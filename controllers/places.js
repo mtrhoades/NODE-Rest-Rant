@@ -1,7 +1,8 @@
-const router = require("express").Router();
-const places = require('../models/places.js')
+// IMPORTS
+const router = require("express").Router(); 
+const places = require('../models/places.js') // ^ used as selectors too.
 
-// ROUTES:
+// INDEX ROUTE
 router.get("/", (req, res) => {
   let places = [
     {
@@ -19,9 +20,10 @@ router.get("/", (req, res) => {
       pic: "/images/cityplace.webp",
     },
   ];
-  res.render("places/index", { places });
+  res.render("places/index", { places }); // renders the data into html.
 });
 
+// CREATE NEW PLACE ROUTE
 router.post('/', (req, res) => {
     console.log(req.body)
     if (!req.body.pic) {
@@ -38,10 +40,18 @@ router.post('/', (req, res) => {
     res.redirect('/places')
 });
 
+// NEW PLACE INPUT PAGE ROUTE (must be placed above the show route)
 router.get('/new', (req, res) => {
     res.render('places/new')
 });
 
+// EDIT PAGE ROUTE (must be placed above the show route)
+router.get("/:id/edit", (req, res) => {
+  let id = req.params.id;
+  res.send("Form page for editing an existing place");
+});
+
+// SHOW PAGE ROUTE
 router.get('/:id', (req, res) => {
     let id = Number(req.params.id)
     if (isNaN(id)) {
@@ -55,16 +65,13 @@ router.get('/:id', (req, res) => {
     }
 });
 
+// UPDATE PLACE ROUTE
 router.put("/:id", (req, res) => {
   let id = req.params.id;
   res.send("Update a particular place");
 });
 
-router.get("/:id/edit", (req, res) => {
-  let id = req.params.id;
-  res.send("Form page for editing an existing place");
-});
-
+// DELETE PLACE ROUTE
 router.delete('/:id', (req, res) => {
   let id = Number(req.params.id)
   if (isNaN(id)) {
@@ -79,15 +86,19 @@ router.delete('/:id', (req, res) => {
   }
 });
 
+// CREATE A RANT (comment) PAGE ROUTE
 router.post("/:id/rant", (req, res) => {
   let id = req.params.id;
   res.send("Create a rant (comment) about a particular place");
 });
 
+// DELETE A RANT (comment) PAGE ROUTE
 router.delete("/:id/rant/:rantId", (req, res) => {
   let id = req.params.id;
   let rantId = req.params.rantId;
   res.send("Delete a rant (comment) about a particular place");
 });
 
+
+// EXPORTS
 module.exports = router;

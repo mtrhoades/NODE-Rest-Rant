@@ -1,6 +1,10 @@
+// RENDERS WHAT HTML TO SHOW FOR EACH PLACE SELECTED:
+
+// IMPORTS
 const React = require("react");
 const Def = require("../default");
 
+// STUB FUNCTION
 function show (data) {
   return (
     <Def>
@@ -39,4 +43,6 @@ function show (data) {
   );
 }
 
+
+// EXPORTS
 module.exports = show;

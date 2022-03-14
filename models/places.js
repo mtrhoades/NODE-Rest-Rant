@@ -1,3 +1,6 @@
+// DATA:
+// (an array of objects) 
+
 module.exports = [{
     name: 'H-Thai-ML',
     city: 'Seattle',

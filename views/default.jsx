@@ -1,7 +1,10 @@
-// import react
+// USED AS A DEFAULT FOR RENDERING ALL HTML PAGES FOR VIEWING: (used as set-up in all html/.jsx pages inside views folder.)
+// ** BOILERPLATE **
+
+// IMPORTS
 const React = require('react')
 
-// create def function for the HTML code that is the same on all pages
+// STUB FUNCTION
 function Def (html) {
     return (
         <html>
@@ -24,5 +27,6 @@ function Def (html) {
     )
   }
 
-// export def function
+
+// EXPORTS
 module.exports = Def

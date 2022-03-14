@@ -1,33 +1,36 @@
-// Dependencies:
+// IMPORTS
 const express = require('express');
 const methodOverride = require('method-override');
 
-// Configuration:
+// CONFIG
 require('dotenv').config();
 const PORT = process.env.PORT
+
+// SELECTORS
 const app = express();
 
-
-// Middle ware
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jsx');
-app.engine('jsx', require('express-react-views').createEngine());
+// MIDDLEWARE
+app.set('views', __dirname + '/views'); // grabs the views folder files.
+app.set('view engine', 'jsx'); // sets view engine to JSX
+app.engine('jsx', require('express-react-views').createEngine()); // requires REACT
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
-// Routes:
-app.use('/places', require('./controllers/places'));
-
+// ROUTES:
 app.get('/', (req, res) => {
     res.render('home')
 });
 
+// PLACES - Controller
+app.use('/places', require('./controllers/places'));
+
+// 404 ERROR
 app.get('*', (req, res) => {
     res.render('error404')
 });
 
-// Listen:
+// LISTEN:
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`)
 })
