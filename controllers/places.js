@@ -4,22 +4,6 @@ const places = require('../models/places.js') // ^ used as selectors too.
 
 // INDEX ROUTE
 router.get("/", (req, res) => {
-  let places = [
-    {
-      name: "H-Thai-ML",
-      city: "Seattle",
-      state: "WA",
-      cuisines: "Thai, Pan-Asian",
-      pic: "/images/greenplace.jpg",
-    },
-    {
-      name: "Coding Cat Cafe",
-      city: "Phoenix",
-      state: "AZ",
-      cuisines: "Coffee, Bakery",
-      pic: "/images/cityplace.webp",
-    },
-  ];
   res.render("places/index", { places }); // renders the data into html.
 });
 
@@ -58,7 +42,6 @@ router.get("/:id/edit", (req, res) => {
     res.render("places/edit", { place: places[id], index: req.params.id });
   }
 });
-
 
 // SHOW PAGE ROUTE
 router.get('/:id', (req, res) => {

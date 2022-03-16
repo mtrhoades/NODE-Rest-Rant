@@ -13,17 +13,18 @@ const app = express();
 app.set('views', __dirname + '/views'); // grabs the views folder files.
 app.set('view engine', 'jsx'); // sets view engine to JSX
 app.engine('jsx', require('express-react-views').createEngine()); // requires REACT
-app.use(express.static('public'));
+app.use(express.static('public')); // access to public folder
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 // ROUTES:
+// PLACES - Controller
+app.use('/places', require('./controllers/places')); // anything with starting route: '/places' now comes from the controller.
+
+// HOME ROUTE
 app.get('/', (req, res) => {
     res.render('home')
 });
-
-// PLACES - Controller
-app.use('/places', require('./controllers/places'));
 
 // 404 ERROR
 app.get('*', (req, res) => {
