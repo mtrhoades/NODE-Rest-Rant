@@ -47,8 +47,16 @@ router.get('/new', (req, res) => {
 
 // EDIT PAGE ROUTE (must be placed above the show route)
 router.get("/:id/edit", (req, res) => {
-  let id = req.params.id;
-  res.send("Form page for editing an existing place");
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+  }
+  else if (!places[id]) {
+    res.render('error404')
+  }
+  else {
+      res.render('places/edit', { place: places[id] });    
+  }
 });
 
 // SHOW PAGE ROUTE
@@ -81,7 +89,7 @@ router.delete('/:id', (req, res) => {
     res.render('error404')
   }
   else {
-      places.splice(id, 1);
+    places.splice(id, 1);
     res.redirect('/places')
   }
 });
