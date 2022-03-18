@@ -33,7 +33,7 @@ function new_form () {
                     </div>
                         <input className="btn btn-primary" type="submit" value="Add Place" />
                     <div className="form-group">
-                        <label htmlfor="founded">Founded Year</label>
+                        <label htmlFor="founded">Founded Year</label>
                         <input className="form-control" id="founded" name="founded" />
                     </div>
                 </form>
