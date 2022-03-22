@@ -24,15 +24,10 @@ function show (data) {
         </div>
         <div>
             <img src={data.place.pic}></img>
+            <h3>Located in {data.place.city}, {data.place.state}</h3>
         </div>
         <div>
-            <h4>{data.place.city}</h4>
-        </div>
-        <div>
-            <h4>{data.place.state}</h4>
-        </div>
-        <div>
-            <h4>{data.place.cuisines}</h4>
+            <h3>{data.place.showEstablished()}</h3>
         </div>
         <div>
             <h2>Comments</h2>
